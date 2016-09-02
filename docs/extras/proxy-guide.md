@@ -56,3 +56,38 @@ make install-config
 ```
 
 ###Step 2. - Configure proxychains-ng
+
+`sudo vim /etc/proxychains.conf`
+
+First we need to "whitelist" our local network. Find the line for "Loopback address range", and uncomment your localhost:
+
+```
+## RFC5735 Loopback address range
+## if you enable this, you have to make sure remote_dns_subnet is not 127
+## you'll need to enable it if you want to use an application that
+## connects to localhost.
+ localnet 127.0.0.0/255.0.0.0
+```
+
+Next, find the line for "Private Address Ranges" and uncomment the subnet prefix used on your local network:
+
+```
+## RFC1918 Private Address Ranges
+# localnet 10.0.0.0/255.0.0.0
+# localnet 172.16.0.0/255.240.0.0
+ localnet 192.168.0.0/255.255.0.0
+```
+
+It's also recommended to switch to Round Robin chain. Near the top of the file, add a comment tag "#" in front of strict_chain, and remove the one from round_robin_chain.
+
+Lastly, add your list of proxies to the end of the file
+
+```
+[ProxyList]
+# add proxy here ...
+# meanwile
+# defaults set to "tor"
+socks5    127.0.0.1   9050
+```
+
+
