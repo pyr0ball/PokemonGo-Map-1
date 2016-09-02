@@ -90,4 +90,12 @@ Lastly, add your list of proxies to the end of the file
 socks5    127.0.0.1   9050
 ```
 
+###Step 3. - Using proxychains-ng with PokemonGo-Map
+
+Now for the easiest part! Prefix your map launch with `proxychains4`
+
+```
+proxychains4 python runserver.py
+```
+
 
