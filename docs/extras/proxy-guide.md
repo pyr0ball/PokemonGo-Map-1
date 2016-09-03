@@ -15,7 +15,7 @@ First things first, you'll want to find some usable proxies. There are free publ
 Part 2: Universal Method - Using Server Configuration
 -----------------------------------------------------
 
-The easiest and simplest method for using proxies with your map is to use the built-in configuration, however this is limited to using only one proxy at a time. You can accomplish this one of two ways, either by adding the proxy to your config.ini, or using it on the command line.
+The easiest and simplest method for using proxies with your map is to use the built-in configuration, however this is limited in that if there is a bad proxy in the list, the script will error out. You can accomplish this one of two ways, either by adding the proxy to your config.ini, or using it on the command line.
 
 ###Using the Configuration File:
 
